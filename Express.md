@@ -1,71 +1,70 @@
-[TOC]
-###1. Express°²×°
+###1. Expresså®‰è£…
 `$ npm install express`
 
 -------------------------------------------------
-###2. ´´½¨µÚÒ»¸öExpressÓ¦ÓÃ
-1\. ´´½¨package.jsonÎÄ¼ş
+###2. åˆ›å»ºç¬¬ä¸€ä¸ªExpressåº”ç”¨
+1\. åˆ›å»ºpackage.jsonæ–‡ä»¶
 `$ npm init`
-2\. ĞÂ½¨server.jsÎÄ¼ş£¬Æä´úÂëÈçÏÂ£º
+2\. æ–°å»ºserver.jsæ–‡ä»¶ï¼Œå…¶ä»£ç å¦‚ä¸‹ï¼š
 ```javascript
-var express = require('express'); // ÒıÓÃExpressÄ£¿é
-var app = express(); // ´´½¨Ò»¸öExpress¶ÔÏó
-app.use('/', function(req, res) { // ÓÃapp.use()ÔÚÖ¸¶¨Â·¾¶¼ÓÔØÒ»¸öÖĞ¼ä¼şº¯Êı
+var express = require('express'); // å¼•ç”¨Expressæ¨¡å—
+var app = express(); // åˆ›å»ºä¸€ä¸ªExpresså¯¹è±¡
+app.use('/', function(req, res) { // ç”¨app.use()åœ¨æŒ‡å®šè·¯å¾„åŠ è½½ä¸€ä¸ªä¸­é—´ä»¶å‡½æ•°
    res.send('Hello World');
 });
-app.listen(3000); // ÓÃapp.listen()·½·¨ÉèÖÃÓ¦ÓÃĞèÒª¼àÌıµÄ3000¶Ë¿Ú
+app.listen(3000); // ç”¨app.listen()æ–¹æ³•è®¾ç½®åº”ç”¨éœ€è¦ç›‘å¬çš„3000ç«¯å£
 console.log('Server running at http://localhost:3000/');
-module.exports = app; // module.exports¶ÔÏóÊÇÓÃÓÚ·µ»ØÓ¦ÓÃ³ÌĞò¶ÔÏóµÄ
+module.exports = app; // module.exportså¯¹è±¡æ˜¯ç”¨äºè¿”å›åº”ç”¨ç¨‹åºå¯¹è±¡çš„
 ```
-3\. ÔËĞĞĞÂ´´½¨µÄÓ¦ÓÃ
+3\. è¿è¡Œæ–°åˆ›å»ºçš„åº”ç”¨
 `$ node server`
 
 -------------------------------------------------
-###3. Ó¦ÓÃ¡¢ÇëÇóºÍÏìÓ¦¶ÔÏó
-*Ó¦ÓÃ¶ÔÏó*ÊÇÖ¸ÉÏÃæÀı×ÓÖĞ´´½¨µÄExpressÓ¦ÓÃÊµÀı£¬Í¨³£Ëü»á±»ÓÃÓÚÊµÏÖ¶ÔÓ¦ÓÃµÄÅäÖÃ¡£
-*ÇëÇó¶ÔÏó*ÊÇÖ¸Node HTTPÇëÇó¶ÔÏóµÄ·â×°£¬ÓÃÓÚ»ñÈ¡µ±Ç°ÕıÔÚ´¦ÀíµÄÇëÇóĞÅÏ¢¡£
-*ÏìÓ¦¶ÔÏó*ÊÇÖ¸Node HTTPÏìÓ¦¶ÔÏóµÄ·â×°£¬ÓÃÓÚÉèÖÃÏìÓ¦°üÍ·ºÍÊı¾İ¡£
+###3. åº”ç”¨ã€è¯·æ±‚å’Œå“åº”å¯¹è±¡
+*åº”ç”¨å¯¹è±¡*æ˜¯æŒ‡ä¸Šé¢ä¾‹å­ä¸­åˆ›å»ºçš„Expressåº”ç”¨å®ä¾‹ï¼Œé€šå¸¸å®ƒä¼šè¢«ç”¨äºå®ç°å¯¹åº”ç”¨çš„é…ç½®ã€‚
+*è¯·æ±‚å¯¹è±¡*æ˜¯æŒ‡Node HTTPè¯·æ±‚å¯¹è±¡çš„å°è£…ï¼Œç”¨äºè·å–å½“å‰æ­£åœ¨å¤„ç†çš„è¯·æ±‚ä¿¡æ¯ã€‚
+*å“åº”å¯¹è±¡*æ˜¯æŒ‡Node HTTPå“åº”å¯¹è±¡çš„å°è£…ï¼Œç”¨äºè®¾ç½®å“åº”åŒ…å¤´å’Œæ•°æ®ã€‚
 
-**Ó¦ÓÃ¶ÔÏó**
-- `app.set(name, value)`: ÓÃÓÚÉèÖÃExpressÅäÖÃÖĞµÄ»·¾³±äÁ¿
-- `app.get(name)`: ÓÃÓÚ»ñÈ¡ExpressÅäÖÃÖĞµÄ»·¾³±äÁ¿
-- `app.engine(ext, callback)`: ÓÃÓÚÖ¸¶¨Ä£°åÒıÇæÖĞµÄäÖÈ¾ÎÄ¼şÀàĞÍ
-- `app.locals`: ÓÃÓÚÏòäÖÈ¾Ä£°å·¢ËÍÓ¦ÓÃ¼¶±äÁ¿
-- `app.use([path], callback)`:ÓÃÓÚ´´½¨´¦ÀíHTTPÇëÇóµÄÖĞ¼ä¼ş
-- `app.VERB(path, [callback...], callback)`: ÓÃÓÚ¶¨ÒåÒ»¸ö»ò¶à¸öÖĞ¼ä¼şº¯Êı£¬ÒÔÏìÓ¦ÌØ¶¨HTTP·½·¨·¢ÍùÄ³Ò»Ö¸¶¨Â·¾¶µÄÇëÇó
-- `app.route(path).VERB([callback...], callback)`: ÓÃÓÚ¶¨ÒåÒ»¸ö»ò¶à¸öÖĞ¼ä¼şº¯Êı£¬ÒÔÏìÓ¦·¢ÍùÄ³Ò»Â·¾¶µÄ¶àÖÖHTTPÇëÇó·½·¨
-- `app.param([name], callback)`: ÓÃÓÚ·¢ÍùÄ³Ò»Â·¾¶ÇÒ°üº¬Ö¸¶¨Â·ÓÉ²ÎÊıµÄÇëÇó¸½¼ÓÄ³Ò»ÌØ¶¨¹¦ÄÜ
+**åº”ç”¨å¯¹è±¡**
+- `app.set(name, value)`: ç”¨äºè®¾ç½®Expressé…ç½®ä¸­çš„ç¯å¢ƒå˜é‡
+- `app.get(name)`: ç”¨äºè·å–Expressé…ç½®ä¸­çš„ç¯å¢ƒå˜é‡
+- `app.engine(ext, callback)`: ç”¨äºæŒ‡å®šæ¨¡æ¿å¼•æ“ä¸­çš„æ¸²æŸ“æ–‡ä»¶ç±»å‹
+- `app.locals`: ç”¨äºå‘æ¸²æŸ“æ¨¡æ¿å‘é€åº”ç”¨çº§å˜é‡
+- `app.use([path], callback)`:ç”¨äºåˆ›å»ºå¤„ç†HTTPè¯·æ±‚çš„ä¸­é—´ä»¶
+- `app.VERB(path, [callback...], callback)`: ç”¨äºå®šä¹‰ä¸€ä¸ªæˆ–å¤šä¸ªä¸­é—´ä»¶å‡½æ•°ï¼Œä»¥å“åº”ç‰¹å®šHTTPæ–¹æ³•å‘å¾€æŸä¸€æŒ‡å®šè·¯å¾„çš„è¯·æ±‚
+- `app.route(path).VERB([callback...], callback)`: ç”¨äºå®šä¹‰ä¸€ä¸ªæˆ–å¤šä¸ªä¸­é—´ä»¶å‡½æ•°ï¼Œä»¥å“åº”å‘å¾€æŸä¸€è·¯å¾„çš„å¤šç§HTTPè¯·æ±‚æ–¹æ³•
+- `app.param([name], callback)`: ç”¨äºå‘å¾€æŸä¸€è·¯å¾„ä¸”åŒ…å«æŒ‡å®šè·¯ç”±å‚æ•°çš„è¯·æ±‚é™„åŠ æŸä¸€ç‰¹å®šåŠŸèƒ½
 
-**ÇëÇó¶ÔÏó**
-- `req.query`: ¼´ÒÑ½âÎöÎª¶ÔÏóµÄËùÓĞGET²ÎÊı
-- `req.params`: ¼´ÒÑ½âÎöÎª¶ÔÏóµÄÂ·ÓÉ²ÎÊı
-- `req.body`: ¸ÃÊôĞÔ°üº¬ÔÚbodyParser()ÖĞ¼ä¼şÖĞ£¬ÓÃÓÚ»ñÈ¡ËùÓĞÇëÇóµÄbody²¿·Ö
-- `req.param(name)`: ÓÃÓÚ»ñÈ¡ÇëÇó²ÎÊı£¬°üÀ¨GET²ÎÊı¡¢Â·ÓÉ²ÎÊı£¬»òÇëÇóbody²¿·ÖµÄJSONÊôĞÔ
-- `req.path¡¢req.host¼°req.ip`: ¼´µ±Ê±ÇëÇóµÄÂ·¾¶¡¢Ö÷»úÃûºÍ·ÃÎÊÕßµÄIP
-- `req.cookies`: ¸Ã·½·¨ĞèÒªÓëcookieParser()ÖĞ¼ä¼ş½áºÏÊ¹ÓÃ£¬ÓÃÓÚ»ñÈ¡ÓÃ»§ä¯ÀÀÆ÷´«À´µÄcookies
+**è¯·æ±‚å¯¹è±¡**
+- `req.query`: å³å·²è§£æä¸ºå¯¹è±¡çš„æ‰€æœ‰GETå‚æ•°
+- `req.params`: å³å·²è§£æä¸ºå¯¹è±¡çš„è·¯ç”±å‚æ•°
+- `req.body`: è¯¥å±æ€§åŒ…å«åœ¨bodyParser()ä¸­é—´ä»¶ä¸­ï¼Œç”¨äºè·å–æ‰€æœ‰è¯·æ±‚çš„bodyéƒ¨åˆ†
+- `req.param(name)`: ç”¨äºè·å–è¯·æ±‚å‚æ•°ï¼ŒåŒ…æ‹¬GETå‚æ•°ã€è·¯ç”±å‚æ•°ï¼Œæˆ–è¯·æ±‚bodyéƒ¨åˆ†çš„JSONå±æ€§
+- `req.pathã€req.hoståŠreq.ip`: å³å½“æ—¶è¯·æ±‚çš„è·¯å¾„ã€ä¸»æœºåå’Œè®¿é—®è€…çš„IP
+- `req.cookies`: è¯¥æ–¹æ³•éœ€è¦ä¸cookieParser()ä¸­é—´ä»¶ç»“åˆä½¿ç”¨ï¼Œç”¨äºè·å–ç”¨æˆ·æµè§ˆå™¨ä¼ æ¥çš„cookies
 
-**ÏìÓ¦¶ÔÏó**
-- `res.status(code)`:ÓÃÓÚÉèÖÃÏìÓ¦µÄHTTP×´Ì¬Âë
-- `res.set(field, [value])`: ÓÃÓÚÉèÖÃÏìÓ¦µÄHTTPµÄ±¨Í·
-- `res.cookie(name, value, [options])`: ÓÃÓÚÉèÖÃÏìÓ¦µÄä¯ÀÀÆ÷cookies£¨options²ÎÊıÊÇÒ»¸ö¶ÔÏó£¬ÓÃÓÚ¶¨ÒåcookiesÅäÖÃ£©
-- `res.redirect([status], url)`: ÓÃÓÚ½«ÇëÇóÖØĞÂ¶¨Î»µ½²ÎÊıurlËù¶¨ÒåµÄURL£¨HTTP×´Ì¬ÂëÊÇ¿ÉÌí¼ÓµÄ£©
-- `res.send([body | status], [body])`: Ö÷ÒªÓÃÓÚ·ÇÁ÷Ê½ÏìÓ¦
-- `res.json([status | body], [body])`: ÈôÓÃÓÚ·¢ËÍ¶ÔÏó»òÊı×é£¬¸Ã·½·¨Óëres.send()ÍêÈ«Ò»ÖÂ¡£²»¹ı´ó¶àÊıÇé¿öÏÂ£¬¸Ã·½·¨½«»á±»ÓÃ×÷ÎªÓï·¨ÌÇ¡£È»ºóÄ³Ğ©Çé¿öÏÂ£¬ËüÒ²¿ÉÒÔ±»ÓÃÀ´ÇáÖÊ·¢ËÍJSONµÄ¿Õ¶ÔÏó£¬±ÈÈçnullºÍundefined¡£
-- `res.render(view, [locals], callback)`: ÓÃÓÚÊÓÍ¼äÖÈ¾£¬²¢·¢ËÍ°üº¬HTMLµÄÏìÓ¦
+**å“åº”å¯¹è±¡**
+- `res.status(code)`:ç”¨äºè®¾ç½®å“åº”çš„HTTPçŠ¶æ€ç 
+- `res.set(field, [value])`: ç”¨äºè®¾ç½®å“åº”çš„HTTPçš„æŠ¥å¤´
+- `res.cookie(name, value, [options])`: ç”¨äºè®¾ç½®å“åº”çš„æµè§ˆå™¨cookiesï¼ˆoptionså‚æ•°æ˜¯ä¸€ä¸ªå¯¹è±¡ï¼Œç”¨äºå®šä¹‰cookiesé…ç½®ï¼‰
+- `res.redirect([status], url)`: ç”¨äºå°†è¯·æ±‚é‡æ–°å®šä½åˆ°å‚æ•°urlæ‰€å®šä¹‰çš„URLï¼ˆHTTPçŠ¶æ€ç æ˜¯å¯æ·»åŠ çš„ï¼‰
+- `res.send([body | status], [body])`: ä¸»è¦ç”¨äºéæµå¼å“åº”
+- `res.json([status | body], [body])`: è‹¥ç”¨äºå‘é€å¯¹è±¡æˆ–æ•°ç»„ï¼Œè¯¥æ–¹æ³•ä¸res.send()å®Œå…¨ä¸€è‡´ã€‚ä¸è¿‡å¤§å¤šæ•°æƒ…å†µä¸‹ï¼Œè¯¥æ–¹æ³•å°†ä¼šè¢«ç”¨ä½œä¸ºè¯­æ³•ç³–ã€‚ç„¶åæŸäº›æƒ…å†µä¸‹ï¼Œå®ƒä¹Ÿå¯ä»¥è¢«ç”¨æ¥è½»è´¨å‘é€JSONçš„ç©ºå¯¹è±¡ï¼Œæ¯”å¦‚nullå’Œundefinedã€‚
+- `res.render(view, [locals], callback)`: ç”¨äºè§†å›¾æ¸²æŸ“ï¼Œå¹¶å‘é€åŒ…å«HTMLçš„å“åº”
 
 -------------------------------------------------
-###4. ×éÖ¯ÏîÄ¿½á¹¹
-#####1. Ë®Æ½ÎÄ¼ş¼Ğ½á¹¹
+###4. ç»„ç»‡é¡¹ç›®ç»“æ„
+#####1. æ°´å¹³æ–‡ä»¶å¤¹ç»“æ„
 
-#####2. ´¹Ö±ÎÄ¼ş¼Ğ½á¹¹
+#####2. å‚ç›´æ–‡ä»¶å¤¹ç»“æ„
 
-#####3. ÎÄ¼şÃüÃûÔ¼¶¨
+#####3. æ–‡ä»¶å‘½åçº¦å®š
 A simple approach would be to name our Express controller *feature.server.controller.js*
 and our AngularJS controller *feature.client.controller.js*.
-#####4. Êµ¼ùË®Æ½ÎÄ¼ş¼Ğ½á¹¹
-1\. ´´½¨ÏîÄ¿ÎÄ¼ş¼Ğ½á¹¹ÈçÏÂ
+#####4. å®è·µæ°´å¹³æ–‡ä»¶å¤¹ç»“æ„
+1\. åˆ›å»ºé¡¹ç›®æ–‡ä»¶å¤¹ç»“æ„å¦‚ä¸‹
 
-2\. ÔÚ¸ùÄ¿Â¼´´½¨package.jsonÎÄ¼şÈçÏÂ£º
+2\. åœ¨æ ¹ç›®å½•åˆ›å»ºpackage.jsonæ–‡ä»¶å¦‚ä¸‹ï¼š
 ```json
 {
     "name" : "MEAN",
@@ -75,30 +74,30 @@ and our AngularJS controller *feature.client.controller.js*.
     }
 }
 ```
-3\. ´´½¨¿ØÖÆÆ÷£ºÔÚapp/controllerssÎÄ¼ş¼ĞÏÂ´´½¨index.server.controller.jsÎÄ¼ş£º
+3\. åˆ›å»ºæ§åˆ¶å™¨ï¼šåœ¨app/controllerssæ–‡ä»¶å¤¹ä¸‹åˆ›å»ºindex.server.controller.jsæ–‡ä»¶ï¼š
 ```javascript
 exports.render = function(req, res) {
    res.send('Hello World');
 };
 ```
-4\. ´´½¨ExpressÂ·ÓÉ¹¦ÄÜ£ºÔÚapp/routesÎÄ¼ş¼ĞÏÂ´´½¨index.server.routes.jsÎÄ¼ş£º
+4\. åˆ›å»ºExpressè·¯ç”±åŠŸèƒ½ï¼šåœ¨app/routesæ–‡ä»¶å¤¹ä¸‹åˆ›å»ºindex.server.routes.jsæ–‡ä»¶ï¼š
 ```javascript
 module.exports = function(app) {
    var index = require('../controllers/index.server.controller');
    app.get('/', index.render);
 };
 ```
-5\. ´´½¨Express¶ÔÏó£ºÔÚapp/configÎÄ¼ş¼ĞÏÂ´´½¨express.jsÎÄ¼ş
-express.js×¨ÃÅÓÃÓÚÅäÖÃExpressÓ¦ÓÃ£¬ËùÓĞÓëExpressÓ¦ÓÃÏà¹ØµÄÅäÖÃÒ²ĞèÒªÌí¼Óµ½Õâ¸öÎÄ¼şÖĞ¡£
+5\. åˆ›å»ºExpresså¯¹è±¡ï¼šåœ¨app/configæ–‡ä»¶å¤¹ä¸‹åˆ›å»ºexpress.jsæ–‡ä»¶
+express.jsä¸“é—¨ç”¨äºé…ç½®Expressåº”ç”¨ï¼Œæ‰€æœ‰ä¸Expressåº”ç”¨ç›¸å…³çš„é…ç½®ä¹Ÿéœ€è¦æ·»åŠ åˆ°è¿™ä¸ªæ–‡ä»¶ä¸­ã€‚
 ```javascript
 var express = require('express');
 module.exports = function() {
    var app = express();
-   require('../app/routes/index.server.routes.js')(app); // µ÷ÓÃÇ°Ãæ´´½¨µÄÂ·ÓÉÎÄ¼ş£¬ÒÔº¯Êıµ÷ÓÃµÄ·½Ê½´«ÈëÁËÓ¦ÓÃÊµÀı
+   require('../app/routes/index.server.routes.js')(app); // è°ƒç”¨å‰é¢åˆ›å»ºçš„è·¯ç”±æ–‡ä»¶ï¼Œä»¥å‡½æ•°è°ƒç”¨çš„æ–¹å¼ä¼ å…¥äº†åº”ç”¨å®ä¾‹
    return app;
 };
 ```
-6\. ÔÚ¸ùÄ¿Â¼ÏÂ´´½¨server.jsÎÄ¼ş
+6\. åœ¨æ ¹ç›®å½•ä¸‹åˆ›å»ºserver.jsæ–‡ä»¶
 ```javascript
 var express = require('./config/express');
 
@@ -108,15 +107,15 @@ module.exports = app;
 
 console.log('Server running at http://localhost:3000/');
 ```
-7\. °²×°ÒÀÀµºÍÆô¶¯Ó¦ÓÃ
-ÓÃÃüÁîĞĞ¹¤¾ß½øÈëµ½Ó¦ÓÃ³ÌĞò¸ùÄ¿Â¼£º
+7\. å®‰è£…ä¾èµ–å’Œå¯åŠ¨åº”ç”¨
+ç”¨å‘½ä»¤è¡Œå·¥å…·è¿›å…¥åˆ°åº”ç”¨ç¨‹åºæ ¹ç›®å½•ï¼š
 `$ node install`
 `$ node server`
 
 -----------------------------------------------
-###5. ExpressÓ¦ÓÃÅäÖÃ
-#####1. ¸ù¾İÔËĞĞ»·¾³À´ÅäÖÃÓ¦ÓÃ
-1\. Ìí¼ÓÒÀÀµ£º±à¼­package.jsonÎÄ¼şÈçÏÂ£º
+###5. Expressåº”ç”¨é…ç½®
+#####1. æ ¹æ®è¿è¡Œç¯å¢ƒæ¥é…ç½®åº”ç”¨
+1\. æ·»åŠ ä¾èµ–ï¼šç¼–è¾‘package.jsonæ–‡ä»¶å¦‚ä¸‹ï¼š
 ```json
 {
     "name": "MEAN",
@@ -130,16 +129,16 @@ console.log('Server running at http://localhost:3000/');
    }
 }
 ```
-2\. ĞŞ¸Äconfig/express.jsÎÄ¼ş
+2\. ä¿®æ”¹config/express.jsæ–‡ä»¶
 ```javascript
 var express = require('express'),
-   morgan = require('morgan'), // Ìá¹©¼òµ¥µÄÈÕÖ¾ÖĞ¼ä¼ş
-   compress = require('compression'), // Ìá¹©ÏìÓ¦ÄÚÈİµÄÑ¹Ëõ¹¦ÄÜ
-   bodyParser = require('body-parser'), // °üº¬¼¸¸ö´¦ÀíÇëÇóÊı¾İµÄÖĞ¼ä¼ş
-   methodOverride = require('method-override'); // Ìá¹©ÁË¶ÔHTTP DELETEºÍPUTÁ½¸öÒÅÁô·½·¨µÄÖ§³Ö
+   morgan = require('morgan'), // æä¾›ç®€å•çš„æ—¥å¿—ä¸­é—´ä»¶
+   compress = require('compression'), // æä¾›å“åº”å†…å®¹çš„å‹ç¼©åŠŸèƒ½
+   bodyParser = require('body-parser'), // åŒ…å«å‡ ä¸ªå¤„ç†è¯·æ±‚æ•°æ®çš„ä¸­é—´ä»¶
+   methodOverride = require('method-override'); // æä¾›äº†å¯¹HTTP DELETEå’ŒPUTä¸¤ä¸ªé—ç•™æ–¹æ³•çš„æ”¯æŒ
 module.exports = function() {
    var app = express();
-   if (process.env.NODE_ENV === 'development') {  // ¶ÔÏµÍ³»·¾³½øĞĞÅĞ¶¨
+   if (process.env.NODE_ENV === 'development') {  // å¯¹ç³»ç»Ÿç¯å¢ƒè¿›è¡Œåˆ¤å®š
        app.use(morgan('dev'));
    } else if (process.env.NODE_ENV === 'production') {
        app.use(compress());
@@ -153,49 +152,49 @@ module.exports = function() {
    return app;
 };
 ```
-3\. ¶Ôserver.js×÷³öÏàÓ¦ĞŞ¸Ä
-ÔÚÎÄ¼ş¿ªÊ¼µÄµØ·½Ìí¼ÓÈçÏÂ´úÂë£º
+3\. å¯¹server.jsä½œå‡ºç›¸åº”ä¿®æ”¹
+åœ¨æ–‡ä»¶å¼€å§‹çš„åœ°æ–¹æ·»åŠ å¦‚ä¸‹ä»£ç ï¼š
 ```javascript
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'; // Ä¬ÈÏÖµÉèÎªdevelopment
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'; // é»˜è®¤å€¼è®¾ä¸ºdevelopment
 ```
 
-#####2. »·¾³ÅäÖÃÎÄ¼ş
-¿ÉÒÔÊ¹ÓÃ»·¾³ÅäÖÃÎÄ¼ş¶Ô²»Í¬µÄÅäÖÃ½øĞĞ¹ÜÀí¡£ÏÂÃæÎªÄ¬ÈÏµÄ¿ª·¢»·¾³´´½¨Ò»¸öÅäÖÃÎÄ¼ş¡£
-1\. ÔÚconfig/envÎÄ¼ş¼ĞÖĞ´´½¨Ò»¸ödevelopment.jsÎÄ¼ş£º
+#####2. ç¯å¢ƒé…ç½®æ–‡ä»¶
+å¯ä»¥ä½¿ç”¨ç¯å¢ƒé…ç½®æ–‡ä»¶å¯¹ä¸åŒçš„é…ç½®è¿›è¡Œç®¡ç†ã€‚ä¸‹é¢ä¸ºé»˜è®¤çš„å¼€å‘ç¯å¢ƒåˆ›å»ºä¸€ä¸ªé…ç½®æ–‡ä»¶ã€‚
+1\. åœ¨config/envæ–‡ä»¶å¤¹ä¸­åˆ›å»ºä¸€ä¸ªdevelopment.jsæ–‡ä»¶ï¼š
 ```javascript 
 module.exports = {
    // Development configuration options
 };
 ```
-2\. ¹ÜÀíÅäÖÃÎÄ¼şµÄ¼ÓÔØ
-ÔÚconfigÄ¿Â¼ÏÂ´´½¨Ò»¸öconfig.jsÎÄ¼ş£º
+2\. ç®¡ç†é…ç½®æ–‡ä»¶çš„åŠ è½½
+åœ¨configç›®å½•ä¸‹åˆ›å»ºä¸€ä¸ªconfig.jsæ–‡ä»¶ï¼š
 ```javascript
 module.exports = require('./env/' + process.env.NODE_ENV + '.js');
 ```
 -----------------------------------------
-###6. ExpressÂ·ÓÉ»úÖÆ
+###6. Expressè·¯ç”±æœºåˆ¶
 ---------------------------------------------
-###7. äÖÈ¾ÊÓÍ¼
-äÖÈ¾ÊÓÍ¼£º½«¾ßÌåµÄÊı¾İ´«ÈëÄ£°åÒıÇæ£¬ÔÙÓÉÒıÇæäÖÈ¾³ö×îÖÕÊÓÍ¼¡£
-ExpressÓĞÁ½ÖÖ·½·¨äÖÈ¾£º
-1. Ê¹ÓÃapp.render()£¬½«HTML½»ÓÉÒ»¸ö»Øµ÷º¯Êı½øĞĞäÖÈ¾
-2. ¡¾¸ü³£ÓÃ¡¿Ê¹ÓÃres.render()£¬½«ÊÓÍ¼äÖÈ¾³ÉHTMLºóÖ±½Ó×÷ÎªÏìÓ¦Êä³ö
-#####1. ÅäÖÃÊÓÍ¼ÏµÍ³£¨ÒÔEJSÄ£°åÒıÇæÎªÀı£©
-1\. Ìí¼ÓÒÀÀµ`npm install ejs --save`
-2\. ½«EJSÉèÖÃÎªÄ¬ÈÏµÄÄ£°åÒıÇæ
-ĞŞ¸Äconfig/express.js£º
+###7. æ¸²æŸ“è§†å›¾
+æ¸²æŸ“è§†å›¾ï¼šå°†å…·ä½“çš„æ•°æ®ä¼ å…¥æ¨¡æ¿å¼•æ“ï¼Œå†ç”±å¼•æ“æ¸²æŸ“å‡ºæœ€ç»ˆè§†å›¾ã€‚
+Expressæœ‰ä¸¤ç§æ–¹æ³•æ¸²æŸ“ï¼š
+1. ä½¿ç”¨app.render()ï¼Œå°†HTMLäº¤ç”±ä¸€ä¸ªå›è°ƒå‡½æ•°è¿›è¡Œæ¸²æŸ“
+2. ã€æ›´å¸¸ç”¨ã€‘ä½¿ç”¨res.render()ï¼Œå°†è§†å›¾æ¸²æŸ“æˆHTMLåç›´æ¥ä½œä¸ºå“åº”è¾“å‡º
+#####1. é…ç½®è§†å›¾ç³»ç»Ÿï¼ˆä»¥EJSæ¨¡æ¿å¼•æ“ä¸ºä¾‹ï¼‰
+1\. æ·»åŠ ä¾èµ–`npm install ejs --save`
+2\. å°†EJSè®¾ç½®ä¸ºé»˜è®¤çš„æ¨¡æ¿å¼•æ“
+ä¿®æ”¹config/express.jsï¼š
 ```javascript
 ...
 app.use(methodOverride());
 
-app.set('views', './app/views'); // ÉèÖÃÊÓÍ¼ÎÄ¼şµÄ´æ´¢Ä¿Â¼
-app.set('view engine', 'ejs'); // ÉèÖÃEJS×÷ÎªExpressÓ¦ÓÃµÄÄ£°åÒıÇæ
+app.set('views', './app/views'); // è®¾ç½®è§†å›¾æ–‡ä»¶çš„å­˜å‚¨ç›®å½•
+app.set('view engine', 'ejs'); // è®¾ç½®EJSä½œä¸ºExpressåº”ç”¨çš„æ¨¡æ¿å¼•æ“
 
 require('../app/routes/index.server.routes.js')(app);
 ...
 ```
-#####2. EJSÊÓÍ¼äÖÈ¾
-1\. ÔÚapp/viewsÄ¿Â¼ÏÂ´´½¨Ò»¸öindex.ejsÎÄ¼ş£º
+#####2. EJSè§†å›¾æ¸²æŸ“
+1\. åœ¨app/viewsç›®å½•ä¸‹åˆ›å»ºä¸€ä¸ªindex.ejsæ–‡ä»¶ï¼š
 ```html
 <!DOCTYPE html>
 <html>
@@ -207,8 +206,8 @@ require('../app/routes/index.server.routes.js')(app);
 </body>
 </html>
 ```
-2\. ÅäÖÃ¿ØÖÆÆ÷È¥äÖÈ¾Ä£°å²¢×Ô¶¯½«Æä×ª»»ÎªHTMLÏìÓ¦Êä³ö
-ĞŞ¸Äapp/controllers/index.server.controller.jsÎÄ¼şÈçÏÂ£º
+2\. é…ç½®æ§åˆ¶å™¨å»æ¸²æŸ“æ¨¡æ¿å¹¶è‡ªåŠ¨å°†å…¶è½¬æ¢ä¸ºHTMLå“åº”è¾“å‡º
+ä¿®æ”¹app/controllers/index.server.controller.jsæ–‡ä»¶å¦‚ä¸‹ï¼š
 ```javascript
 exports.render = function(req, res) {
    res.render('index', {
@@ -216,25 +215,25 @@ exports.render = function(req, res) {
    })
 };
 ```
-res.render()·½·¨£º
-µÚÒ»¸ö²ÎÊıÊÇEJSÄ£°åÎÄ¼şÃûÖĞÈ¥µôÀ©Õ¹ÃûµÄ²¿·Ö£¬
-µÚ¶ş¸ö²ÎÊıÊÇ°üº¬ÓĞÄ£°å±äÁ¿µÄ¶ÔÏó¡£
+res.render()æ–¹æ³•ï¼š
+ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯EJSæ¨¡æ¿æ–‡ä»¶åä¸­å»æ‰æ‰©å±•åçš„éƒ¨åˆ†ï¼Œ
+ç¬¬äºŒä¸ªå‚æ•°æ˜¯åŒ…å«æœ‰æ¨¡æ¿å˜é‡çš„å¯¹è±¡ã€‚
 
 ---------------------------------------
-###8. ¾²Ì¬ÎÄ¼ş·şÎñ
-ExpressÍ¨¹ıÔ¤ÖÃµÄexpress.static()ÖĞ¼ä¼şÀ´Ìá¹©¾²Ì¬ÎÄ¼ş·şÎñ¡£
-ÈçÏÂĞŞ¸Äconfig/express.js£º
+###8. é™æ€æ–‡ä»¶æœåŠ¡
+Expressé€šè¿‡é¢„ç½®çš„express.static()ä¸­é—´ä»¶æ¥æä¾›é™æ€æ–‡ä»¶æœåŠ¡ã€‚
+å¦‚ä¸‹ä¿®æ”¹config/express.jsï¼š
 ```javascrilpt
 require('../app/routes/index.server.routes.js')(app);
 
-app.use(express.static('./public')); // ²ÎÊıÓÃÓÚÖ¸¶¨¾²Ì¬ÎÄ¼şËùÔÚµÄÎÄ¼ş¼ĞÂ·¾¶
+app.use(express.static('./public')); // å‚æ•°ç”¨äºæŒ‡å®šé™æ€æ–‡ä»¶æ‰€åœ¨çš„æ–‡ä»¶å¤¹è·¯å¾„
 
 return app;
 ```
-¸ÃÖĞ¼ä¼şÆô¶¯µÄÎ»ÖÃ£¬Î»ÓÚÂ·ÓÉÖĞ¼ä¼şÖ®ÏÂ£¬¼´ÏÈÖ´ĞĞÂ·ÓÉÂß¼­¡£
+è¯¥ä¸­é—´ä»¶å¯åŠ¨çš„ä½ç½®ï¼Œä½äºè·¯ç”±ä¸­é—´ä»¶ä¹‹ä¸‹ï¼Œå³å…ˆæ‰§è¡Œè·¯ç”±é€»è¾‘ã€‚
 
-*²âÊÔÀı×Ó*£º
-ÔÚpublic/imgÖĞÔö¼ÓÒ»ÕÅÃûÎªlogo.pngµÄÍ¼Æ¬£¬È»ºóÈçÏÂĞŞ¸Äapp/views/index.ejsÎÄ¼ş£º
+*æµ‹è¯•ä¾‹å­*ï¼š
+åœ¨public/imgä¸­å¢åŠ ä¸€å¼ åä¸ºlogo.pngçš„å›¾ç‰‡ï¼Œç„¶åå¦‚ä¸‹ä¿®æ”¹app/views/index.ejsæ–‡ä»¶ï¼š
 ```html
 <body>
    <img src="img/logo.png" alt="Logo">
@@ -243,21 +242,21 @@ return app;
 ```
 
 -------------------------------------
-###9. ÅäÖÃ»á»°
-»á»°µÄ³£¼û¹¦ÄÜÊÇ¶ÔWebÓ¦ÓÃ·½¿ÉµÄĞĞÎª½øĞĞ¸ú×Ù¡£
-1\. °²×°express-sessionÖĞ¼ä¼ş`$ npm install express-session --save-dev`
-2\. ÉèÖÃcookieÃÜÔ¿
-express-seexionÄ£¿éÍ¨¹ıä¯ÀÀÆ÷µÄcookieÀ´´æ´¢ÓÃ»§µÄÎ¨Ò»±êÊ¶¡£ÎªÁË±ê¼Ç»á»°£¬ĞèÒªÊ¹ÓÃÒ»¸öÃÜÔ¿£¬Õâ¿ÉÒÔÓĞĞ§·ÀÖ¹¶ñÒâµÄ»á»°ÎÛÈ¾¡£
-ÎªÁË°²È«Æğ¼û£¬½¨ÒéÔÚ²»Í¬µÄ»·¾³ÖĞÊ¹ÓÃ²»Í¬µÄcookieÃÜÔ¿£¬Õâ¾ÍÉæ¼°¸ù¾İ»·¾³¼ÓÔØ²»Í¬µÄÅäÖÃÎÄ¼ş¡£
-´Ë´¦Ö»ÉèÖÃdevelopment»·¾³ÏÂµÄcookieÃÜÔ¿¡£
-ĞŞ¸Äconfig/env/development.jsÎÄ¼ş£º
+###9. é…ç½®ä¼šè¯
+ä¼šè¯çš„å¸¸è§åŠŸèƒ½æ˜¯å¯¹Webåº”ç”¨æ–¹å¯çš„è¡Œä¸ºè¿›è¡Œè·Ÿè¸ªã€‚
+1\. å®‰è£…express-sessionä¸­é—´ä»¶`$ npm install express-session --save-dev`
+2\. è®¾ç½®cookieå¯†é’¥
+express-seexionæ¨¡å—é€šè¿‡æµè§ˆå™¨çš„cookieæ¥å­˜å‚¨ç”¨æˆ·çš„å”¯ä¸€æ ‡è¯†ã€‚ä¸ºäº†æ ‡è®°ä¼šè¯ï¼Œéœ€è¦ä½¿ç”¨ä¸€ä¸ªå¯†é’¥ï¼Œè¿™å¯ä»¥æœ‰æ•ˆé˜²æ­¢æ¶æ„çš„ä¼šè¯æ±¡æŸ“ã€‚
+ä¸ºäº†å®‰å…¨èµ·è§ï¼Œå»ºè®®åœ¨ä¸åŒçš„ç¯å¢ƒä¸­ä½¿ç”¨ä¸åŒçš„cookieå¯†é’¥ï¼Œè¿™å°±æ¶‰åŠæ ¹æ®ç¯å¢ƒåŠ è½½ä¸åŒçš„é…ç½®æ–‡ä»¶ã€‚
+æ­¤å¤„åªè®¾ç½®developmentç¯å¢ƒä¸‹çš„cookieå¯†é’¥ã€‚
+ä¿®æ”¹config/env/development.jsæ–‡ä»¶ï¼š
 ```javascript
 module.exports = {
    sessionSecret: 'developmentSessionSecret'
 };
 ```
-3\. Ê¹ÓÃÉÏÊöÅäÖÃÎÄ¼ş¶ÔExpressÓ¦ÓÃ½øĞĞÅäÖÃ
-ĞŞ¸Äconfig/express.jsÎÄ¼ş£º
+3\. ä½¿ç”¨ä¸Šè¿°é…ç½®æ–‡ä»¶å¯¹Expressåº”ç”¨è¿›è¡Œé…ç½®
+ä¿®æ”¹config/express.jsæ–‡ä»¶ï¼š
 ```javascript
 var config = require('./config'),
 ...
@@ -272,9 +271,9 @@ app.use(session({
 app.set('views', './app/views');
 ...
 ```
-sessionÖĞ¼ä¼ş»áÎªÓ¦ÓÃÖĞËùÓĞµÄÇëÇó¶ÔÏóÔö¼ÓÒ»¸ösession¶ÔÏó£¬Í¨¹ıÕâ¸ösession¶ÔÏó£¬¿ÉÒÔÉèÖÃ»òÕß»ñÈ¡µ±Ç°»á»°µÄÈÎÒâÊôĞÔ¡£
-4\. ²âÊÔÀı×Ó£º
-ÈçÏÂĞŞ¸Äapp/controller/index.server.controller.jsÎÄ¼ş£º
+sessionä¸­é—´ä»¶ä¼šä¸ºåº”ç”¨ä¸­æ‰€æœ‰çš„è¯·æ±‚å¯¹è±¡å¢åŠ ä¸€ä¸ªsessionå¯¹è±¡ï¼Œé€šè¿‡è¿™ä¸ªsessionå¯¹è±¡ï¼Œå¯ä»¥è®¾ç½®æˆ–è€…è·å–å½“å‰ä¼šè¯çš„ä»»æ„å±æ€§ã€‚
+4\. æµ‹è¯•ä¾‹å­ï¼š
+å¦‚ä¸‹ä¿®æ”¹app/controller/index.server.controller.jsæ–‡ä»¶ï¼š
 ```javascript
 exports.render = function(req, res){
     var title = "";
@@ -291,6 +290,6 @@ exports.render = function(req, res){
 };
 ```
 ---------------------
-###10. ¸½Â¼
+###10. é™„å½•
 [Express Official Website](http://expressjs.com/)
-[Express¹ÙÍø£¨ÖĞÎÄ£©](http://www.expressjs.com.cn/)
+[Expresså®˜ç½‘ï¼ˆä¸­æ–‡ï¼‰](http://www.expressjs.com.cn/)
